@@ -2,19 +2,22 @@
 
 namespace BrainGames\Engine;
 
-use function BrainGames\Even\GetEvenRules;
+use function BrainGames\Calc\getCalc;
+use function BrainGames\Calc\getCalcRules;
+use function BrainGames\Even\getEvenRules;
 use function BrainGames\Even\getEvenNumber;
 use function cli\line;
 use function cli\prompt;
 
-function playBrainGame(string $gameType) {
+function playBrainGame(string $gameType): void
+{
     $correctAnswersCount = 0;
     $winRoundsCount = 3;
 
     $name = greetGetName();
 
     line(showRules($gameType));
-    
+
     while ($correctAnswersCount < $winRoundsCount) {
         [$question, $correctAnswer] = setGame($gameType);
         line("Question: $question");
@@ -23,7 +26,7 @@ function playBrainGame(string $gameType) {
         if ($answer !== $correctAnswer) {
             line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
             line("Let's try again, $name!");
-            return false;
+            return;
         }
 
         line("Correct!");
@@ -42,14 +45,18 @@ function greetGetName(): string
     return $name;
 }
 
-function setGame(string $gameType): array {
+function setGame(string $gameType): array
+{
     return match ($gameType) {
-        'even' => getEvenNumber()
+        'even' => getEvenNumber(),
+        'calc' => getCalc()
     };
 }
 
-function showRules(string $gameType): string {
+function showRules(string $gameType): string
+{
     return match ($gameType) {
-        'even' => GetEvenRules()
+        'even' => getEvenRules(),
+        'calc' => getCalcRules()
     };
 }
