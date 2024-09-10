@@ -1,12 +1,18 @@
 {
     "name": "hexlet/code",
     "description": "yet another brain games",
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even"
+    ],
     "autoload": {
         "psr-4": {
-            "BrainGames\\Cli\\": "src/"
+            "BrainGames\\": "src"
         },
-        "files": [ 
-            "src/Cli.php" 
+        "files": [
+            "src/Cli.php",
+            "src/Greeting.php",
+            "src/Games/brainEven.php"
         ]
     },
     "authors": [
