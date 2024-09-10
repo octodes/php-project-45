@@ -3,8 +3,11 @@
     "description": "yet another brain games",
     "autoload": {
         "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        }
+            "BrainGames\\Cli\\": "src/"
+        },
+        "files": [ 
+            "src/Cli.php" 
+        ]
     },
     "authors": [
         {
@@ -12,5 +15,7 @@
             "email": "octode@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.0"
+    }
 }
