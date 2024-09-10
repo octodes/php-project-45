@@ -1,0 +1,16 @@
+{
+    "name": "hexlet/code",
+    "description": "yet another brain games",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "octodes",
+            "email": "octode@gmail.com"
+        }
+    ],
+    "require": {}
+}
