@@ -11,8 +11,8 @@
         },
         "files": [
             "src/Cli.php",
-            "src/Greeting.php",
-            "src/Games/brainEven.php"
+            "src/Engine.php",
+            "src/Games/Even.php"
         ]
     },
     "authors": [
