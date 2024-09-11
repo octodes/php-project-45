@@ -6,6 +6,8 @@ use function BrainGames\Calc\getCalc;
 use function BrainGames\Calc\getCalcRules;
 use function BrainGames\Calc\getGCD;
 use function BrainGames\Calc\getGCDRules;
+use function BrainGames\Calc\getProgression;
+use function BrainGames\Calc\getProgressionRules;
 use function BrainGames\Even\getEvenRules;
 use function BrainGames\Even\getEvenNumber;
 use function cli\line;
@@ -38,21 +40,13 @@ function playBrainGame(string $gameType): void
     line("Congratulations, $name!");
 }
 
-function greetGetName(): string
-{
-    line('Welcome to the Brain Game!');
-    $name = ucfirst(prompt('May I have your name?'));
-    line("Hello, $name!");
-
-    return $name;
-}
-
 function setGame(string $gameType): array
 {
     return match ($gameType) {
         'even' => getEvenNumber(),
         'calc' => getCalc(),
-        'gcd' => getGCD()
+        'gcd' => getGCD(),
+        'progression' => getProgression()
     };
 }
 
@@ -61,6 +55,16 @@ function showRules(string $gameType): string
     return match ($gameType) {
         'even' => getEvenRules(),
         'calc' => getCalcRules(),
-        'gcd' => getGCDRules()
+        'gcd' => getGCDRules(),
+        'progression' => getProgressionRules()
     };
+}
+
+function greetGetName(): string
+{
+    line('Welcome to the Brain Game!');
+    $name = ucfirst(prompt('May I have your name?'));
+    line("Hello, $name!");
+
+    return $name;
 }
