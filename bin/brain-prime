@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+
+use function BrainGames\Engine\playBrainGame;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+playBrainGame('prime');

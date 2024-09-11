@@ -6,10 +6,12 @@ use function BrainGames\Calc\getCalc;
 use function BrainGames\Calc\getCalcRules;
 use function BrainGames\Calc\getGCD;
 use function BrainGames\Calc\getGCDRules;
+use function BrainGames\Calc\getPrime;
+use function BrainGames\Calc\getPrimeRules;
 use function BrainGames\Calc\getProgression;
 use function BrainGames\Calc\getProgressionRules;
 use function BrainGames\Even\getEvenRules;
-use function BrainGames\Even\getEvenNumber;
+use function BrainGames\Even\getEven;
 use function cli\line;
 use function cli\prompt;
 
@@ -43,10 +45,11 @@ function playBrainGame(string $gameType): void
 function setGame(string $gameType): array
 {
     return match ($gameType) {
-        'even' => getEvenNumber(),
+        'even' => getEven(),
         'calc' => getCalc(),
         'gcd' => getGCD(),
-        'progression' => getProgression()
+        'progression' => getProgression(),
+        'prime' => getPrime()
     };
 }
 
@@ -56,7 +59,8 @@ function showRules(string $gameType): string
         'even' => getEvenRules(),
         'calc' => getCalcRules(),
         'gcd' => getGCDRules(),
-        'progression' => getProgressionRules()
+        'progression' => getProgressionRules(),
+        'prime' => getPrimeRules()
     };
 }
 

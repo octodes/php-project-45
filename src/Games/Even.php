@@ -8,7 +8,7 @@ function getEvenRules(): string
     return $message;
 }
 
-function getEvenNumber(): array
+function getEven(): array
 {
     $question = rand(1, 99);
     $question % 2 === 0 ? $correctAnswer = 'yes' : $correctAnswer = 'no';
