@@ -49,7 +49,8 @@ function setGame(string $gameType): array
         'calc' => getCalc(),
         'gcd' => getGCD(),
         'progression' => getProgression(),
-        'prime' => getPrime()
+        'prime' => getPrime(),
+        default => ['Wrong game type', 'Wrong game type']
     };
 }
 
@@ -60,7 +61,8 @@ function showRules(string $gameType): string
         'calc' => getCalcRules(),
         'gcd' => getGCDRules(),
         'progression' => getProgressionRules(),
-        'prime' => getPrimeRules()
+        'prime' => getPrimeRules(),
+        default => 'Wrong game type'
     };
 }
 

@@ -18,7 +18,7 @@ function getGCD(): array
     return [$question,(string) $correctAnswer];
 }
 
-function calculateGCD($num1, $num2): int
+function calculateGCD(int $num1, int $num2): int
 {
     return $num2 ? calculateGCD($num2, $num1 % $num2) : $num1;
 }
