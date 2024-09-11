@@ -20,5 +20,9 @@ function getGCD(): array
 
 function calculateGCD(int $num1, int $num2): int
 {
-    return $num2 ? calculateGCD($num2, $num1 % $num2) : $num1;
+    if ($num1 == 0) {
+        return $num2;
+    }
+
+    return calculateGCD($num2 % $num1, $num1);
 }
