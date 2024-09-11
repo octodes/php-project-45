@@ -4,6 +4,8 @@ namespace BrainGames\Engine;
 
 use function BrainGames\Calc\getCalc;
 use function BrainGames\Calc\getCalcRules;
+use function BrainGames\Calc\getGCD;
+use function BrainGames\Calc\getGCDRules;
 use function BrainGames\Even\getEvenRules;
 use function BrainGames\Even\getEvenNumber;
 use function cli\line;
@@ -49,7 +51,8 @@ function setGame(string $gameType): array
 {
     return match ($gameType) {
         'even' => getEvenNumber(),
-        'calc' => getCalc()
+        'calc' => getCalc(),
+        'gcd' => getGCD()
     };
 }
 
@@ -57,6 +60,7 @@ function showRules(string $gameType): string
 {
     return match ($gameType) {
         'even' => getEvenRules(),
-        'calc' => getCalcRules()
+        'calc' => getCalcRules(),
+        'gcd' => getGCDRules()
     };
 }
